@@ -1,0 +1,684 @@
+fileFormatVersion: 2
+guid: 8eb07ae8bb2dd3d4e97e8d64b55da1fe
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 755.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac278bf7d93cdb5419272b58d0a210ef
+      internalID: 1964736343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 755.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c6343332995b04e9a0bd28d97ee0ff
+      internalID: 677869268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_2
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 755.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a25a91e6883a9b4696d1162de6dd037
+      internalID: -143936120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_3
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 755.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78a693fd9544a9469fe615a7de63fd7
+      internalID: 938903275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_4
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 755.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306278101dc195d48b69a05e08027d9b
+      internalID: 1811013134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 567.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5825d500fdc2634196ab5251258c749
+      internalID: -1392056136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 567.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21639b63d3592534aa3b35d73c692c8f
+      internalID: -1187812466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 567.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b0f667cbb335346bd58c7ef6decbd0
+      internalID: 524848010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_8
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 567.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce6b3d370e87d344b6654d73996ed8b
+      internalID: 1909273438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_9
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 567.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f441eaca933b14589726e3390a28e3
+      internalID: 1292806648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 379.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e295c92b0b89d945a588e0a830e0daa
+      internalID: 330671721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_11
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 379.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811bc6363b70f674cbea57445126c234
+      internalID: -1678373118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_12
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 379.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d245c2fe065b8c41a1c645b676a442b
+      internalID: 1352476301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_13
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 379.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da7b9e4f2cfeba4a9c414012f25aff5
+      internalID: -117682232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_14
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 379.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912b36776815cc049aff00ca0ecfa45a
+      internalID: -652551402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c258c3e93a471de4cb7fe84b6bde82cf
+      internalID: -934260395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_16
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 191.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca055d877caf124e9350c5e279a7bc4
+      internalID: -1083238631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_17
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 191.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362d5bc80b0b62649925f617c7af917d
+      internalID: -588230186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_18
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 191.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ead38dfb2410b4e9cc478e41c2c717
+      internalID: 2079292388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_19
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 191.2
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9f233472fa5cd42a425b8138bdbd44
+      internalID: -843849844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.199997
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0782eebc6e081604f808561d5f9e6c08
+      internalID: 214297576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_21
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 3.199997
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83051b05fadfa7f40884dc70aff27b54
+      internalID: -1319941131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_22
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 3.199997
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0c28217e0ba1b44aa37f8a06401763
+      internalID: -1186830689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_23
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 3.199997
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe19f56dd43f8c4f9f37659c03c8fbc
+      internalID: 1397946130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-sprite-1127681.png_24
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 3.199997
+        width: 188.8
+        height: 188.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abb772ef1001ff4baa26db8e69d66eb
+      internalID: -163667705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sword-slash-effect-sprite-1127681.png_2: -143936120
+      sword-slash-effect-sprite-1127681.png_1: 677869268
+      sword-slash-effect-sprite-1127681.png_23: 1397946130
+      sword-slash-effect-sprite-1127681.png_3: 938903275
+      sword-slash-effect-sprite-1127681.png_18: 2079292388
+      sword-slash-effect-sprite-1127681.png_4: 1811013134
+      sword-slash-effect-sprite-1127681.png_21: -1319941131
+      sword-slash-effect-sprite-1127681.png_8: 1909273438
+      sword-slash-effect-sprite-1127681.png_13: -117682232
+      sword-slash-effect-sprite-1127681.png_15: -934260395
+      sword-slash-effect-sprite-1127681.png_17: -588230186
+      sword-slash-effect-sprite-1127681.png_20: 214297576
+      sword-slash-effect-sprite-1127681.png_11: -1678373118
+      sword-slash-effect-sprite-1127681.png_10: 330671721
+      sword-slash-effect-sprite-1127681.png_16: -1083238631
+      sword-slash-effect-sprite-1127681.png_22: -1186830689
+      sword-slash-effect-sprite-1127681.png_9: 1292806648
+      sword-slash-effect-sprite-1127681.png_12: 1352476301
+      sword-slash-effect-sprite-1127681.png_24: -163667705
+      sword-slash-effect-sprite-1127681.png_0: 1964736343
+      sword-slash-effect-sprite-1127681.png_7: 524848010
+      sword-slash-effect-sprite-1127681.png_6: -1187812466
+      sword-slash-effect-sprite-1127681.png_5: -1392056136
+      sword-slash-effect-sprite-1127681.png_14: -652551402
+      sword-slash-effect-sprite-1127681.png_19: -843849844
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

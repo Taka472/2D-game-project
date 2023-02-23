@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CardBack : MonoBehaviour
+{
+    public GameObject cardBack;
+    private Type type;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        type = ScriptableCard.instance.type;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (ScriptableCard.staticCardBack)
+        {
+            if (ScriptableCard.instance.type != Type.spell)
+            {
+                ScriptableCard.instance.healthSprite.gameObject.SetActive(false);
+                ScriptableCard.instance.attackSprite.gameObject.SetActive(false);
+            }
+            cardBack.SetActive(true);
+        } else
+        {
+            if (ScriptableCard.instance.type != Type.spell)
+            {
+                ScriptableCard.instance.healthSprite.gameObject.SetActive(true);
+                ScriptableCard.instance.attackSprite.gameObject.SetActive(true);
+            }
+            cardBack.SetActive(false);
+        }
+    }
+}

@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CardDatabase : MonoBehaviour
+{
+    public static List<Card> Data = new();
+    void Awake()
+    {
+        Data.Add(new Card(1, "Dragon", "+1/+1 to a single unit", Type.dragon, 7, 5, 7, Resources.Load<Sprite>("4")));
+        Data.Add(new Card(2, "Dragon's Sage", "+1/+1 to one unit, if it's a dragon, +2/+3", Type.spell, 0, 0, 0, Resources.Load<Sprite>("2")));
+        Data.Add(new Card(3, "Demon", "-1/0 to a opponent's unit", Type.demon, 2, 1, 4, Resources.Load<Sprite>("10")));
+        Data.Add(new Card(4, "Demon's talisman", "Grand life steal this turn", Type.spell, 0, 0, 0, Resources.Load<Sprite>("7")));
+        Data.Add(new Card(5, "Golem", "Invicible this turn", Type.golem, 7, 7, 8, Resources.Load<Sprite>("51")));
+        Data.Add(new Card(6, "Angel", "If this card is used as a tribute material, +2/+2 for that monster", Type.angel, 2, 1, 2, Resources.Load<Sprite>("8")));
+        Data.Add(new Card(7, "Witch", "+2/+0 on your attack phase", Type.witch, 3, 2, 2, Resources.Load<Sprite>("50")));
+        Data.Add(new Card(8, "A gift from above", "Shuffle the deck and draw 1", Type.spell, 0, 0, 0, Resources.Load<Sprite>("1")));
+    }
+}

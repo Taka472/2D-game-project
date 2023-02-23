@@ -1,0 +1,302 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+public class GameControl : MonoBehaviour
+{
+    public int cardInDeck;
+    public int cardInEnemyDeck;
+    public int monsterOnField;
+    public int spellOnField;
+    public GameObject[] monsterZone;
+    public GameObject[] spellZone;
+    public GameObject GraveYard;
+    public int inGraveYard;
+    public int cardInHand;
+    public int playerHealth = 30;
+    public int enemyMonsterOnField;
+    public int enemySpellOnField;
+    public GameObject[] enemyMonsterZone;
+    public GameObject[] enemySpellZone;
+    public GameObject EnemyGraveYard;
+    public int inEnemyGraveYard;
+    public int cardInEnemyHand;
+    public int enemyHealth = 30;
+
+    public static GameControl instance;
+
+    public Text healthText;
+    public Text enemyHealthText;
+
+    public bool Attack;
+    public bool canDirectAttack;
+    public bool canBeDirectAttack;
+
+    public Image background;
+
+    public Image tributeSummonNotice;
+    public Text tributeSummonText;
+
+    public bool MainPhase;
+    public bool Summon;
+    public bool TributeSummon;
+    public bool ActivateSpell;
+    public bool SetSpell;
+    public bool isFirst;
+    public bool OutOfNumber;
+
+    public Button tributingConfirm;
+    public int amountForTribute;
+
+    public Vector2 GraveYardPosition;
+    public Vector3 EnemyGraveYardPosition;
+
+    public Button discardToEndTurn;
+    public Button attackButton;
+    public Button endTurnButton;
+
+    public bool selectForEffect;
+    public bool spellChainSelect;
+    public bool confirmChainSelect;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        instance = this;
+        playerHealth = 30;
+        enemyHealth = 30;
+        TributeSummon = false;
+        isFirst = true;
+        confirmChainSelect = false;
+        GraveYardPosition = GraveYard.GetComponent<RectTransform>().anchoredPosition + new Vector2(867, 62);
+        EnemyGraveYardPosition = new Vector3(100, -70, 0);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        cardInDeck = PlayerDeck.instance.numsOfCard;
+        cardInEnemyDeck = EnemyDeck.instance.numsOfCard;
+        healthText.text = "" + playerHealth;
+        enemyHealthText.text = "" + enemyHealth;
+        if (enemyMonsterOnField == 0) canDirectAttack = true;
+        else canDirectAttack = false;
+        if (monsterOnField == 0) canBeDirectAttack = true;
+        else canBeDirectAttack = false;
+    }
+
+    public void AttackPhase()
+    {
+        if (Attack) return;
+        MainPhase = false;
+        for (int i = 0; i < 5; i++)
+        {
+            if (monsterZone[i].transform.childCount == 1)
+                monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = false;
+            if (enemyMonsterZone[i].transform.childCount == 1)
+                enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = false;
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            if (monsterZone[i].transform.childCount == 1)
+                CardEffectControl.instance.CardIdCheck(monsterZone[i].transform.GetChild(0).gameObject, true);
+            if (spellZone[i].transform.childCount == 1)
+                CardEffectControl.instance.CardIdCheck(monsterZone[i].transform.GetChild(0).gameObject, true);
+        }
+        Attack = true;
+    }
+
+    public IEnumerator CameraShake(float duration, float magnitude)
+    {
+        Vector3 startPosition = background.transform.position;
+        float elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            magnitude -= Time.deltaTime * magnitude;
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+            background.transform.position = startPosition + new Vector3(x, y, 0);
+            yield return null;
+        }
+        background.transform.position = startPosition;
+    }
+
+    public void RequestTribute(int amount)
+    {
+        Image temp = Instantiate(tributeSummonNotice);
+        temp.transform.SetParent(GameObject.Find("Canvas").transform);
+        temp.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        temp.GetComponent<RectTransform>().localScale = Vector3.one;
+        string haveS = "";
+        if (amount > 1) haveS = "s";
+        tributeSummonText = temp.transform.GetChild(0).GetComponent<Text>();
+        tributeSummonText.text = "This monster required tributing " + amount + " monster" + haveS + " to summon";
+        TributeSummon = true;
+        amountForTribute = amount;
+        tributingConfirm.gameObject.SetActive(true);
+        temp.transform.GetChild(3).gameObject.SetActive(false);
+    }
+
+    public void ConfirmTribute()
+    {
+        int temp = amountForTribute;
+        for (int i = 0; i < monsterZone.Length; i++)
+        {
+            if (monsterZone[i].transform.childCount == 1)
+            {
+                if (monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForTribute)
+                {
+                    temp--;
+                }
+            }
+        }
+        if (temp == 0)
+        {
+            for (int i = 0; i < monsterZone.Length; i++)
+            {
+                if (monsterZone[i].transform.childCount == 1)
+                {
+                    if (monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForTribute)
+                    {
+                        monsterZone[i].transform.GetChild(0).transform.SetParent(GraveYard.transform);
+                    }
+                }
+            }
+            for (int x = 0; x < GraveYard.transform.childCount; x++)
+            {
+                GraveYard.transform.GetChild(x).GetComponent<ScriptableCard>().glowEffect.gameObject.SetActive(false);
+                GraveYard.transform.GetChild(x).GetComponent<RectTransform>().anchoredPosition = GraveYardPosition;
+                GraveYard.transform.GetChild(x).GetComponent<RectTransform>().localScale = Vector3.one;
+            }
+            tributingConfirm.gameObject.SetActive(false);
+            Summon = true;
+            monsterOnField -= amountForTribute;
+            inGraveYard += amountForTribute;
+        }
+        else
+        {
+            tributingConfirm.gameObject.SetActive(false);
+            TributeSummon = false;
+            for (int i = 0; i < 5; i++)
+            {
+                if (monsterZone[i].transform.childCount == 1)
+                {
+                    if (monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForTribute)
+                    {
+                        monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForTribute = false;
+                    }
+                }
+            }
+        }
+    }
+
+    public void Discard()
+    {
+        cardInHand--;
+        InfoPanelControl.instance.isSelected.transform.SetParent(GraveYard.transform);
+        InfoPanelControl.instance.isSelected.GetComponent<RectTransform>().anchoredPosition = GraveYardPosition;
+        InfoPanelControl.instance.isSelected.GetComponent<RectTransform>().localScale = Vector3.one;
+    }
+
+    public IEnumerator SendToGraveYard(GameObject card)
+    {
+        if (card.name[..4] == "Mons" || card.name[..4] == "Spel")
+        {
+            card.transform.SetParent(GraveYard.transform);
+            card.GetComponent<RectTransform>().anchoredPosition = GraveYardPosition;
+            card.GetComponent<RectTransform>().localScale = Vector3.one;
+            inGraveYard++;
+            if (card.GetComponent<ScriptableCard>().type != Type.spell) monsterOnField--;
+            else spellOnField--;
+        }
+        else if (card.name[..4] == "Enem")
+        {
+            card.transform.SetParent(EnemyGraveYard.transform);
+            card.GetComponent<RectTransform>().anchoredPosition = EnemyGraveYardPosition;
+            card.GetComponent<RectTransform>().localScale = Vector3.one;
+            inEnemyGraveYard++;
+            if (card.GetComponent<ScriptableCard>().type != Type.spell) enemyMonsterOnField--;
+            else enemySpellOnField--;
+        }
+        CardEffectControl.instance.CardIdCheck(card, true);
+        yield return new WaitForSeconds(.5f);
+    }
+
+    public void EffectPhase()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (monsterZone[i].transform.childCount == 1)
+                monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForEffect = false;
+            if (spellZone[i].transform.childCount == 1)
+                spellZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForEffect = false;
+            if (enemyMonsterZone[i].transform.childCount == 1)
+                enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForEffect = false;
+            if (enemySpellZone[i].transform.childCount == 1)
+                enemySpellZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isSelectedForEffect = false;
+        }
+        if (selectForEffect)
+        {
+            endTurnButton.gameObject.SetActive(false);
+            attackButton.gameObject.SetActive(false);
+            Debug.Log(attackButton.IsActive());
+        }
+        else
+        {
+            attackButton.gameObject.SetActive(true);
+            endTurnButton.gameObject.SetActive(true);
+        }
+    }
+
+    public void EffectUpdate(List<GameObject> effectChain)
+    {
+        for (int i = effectChain.Count - 1; i >= 0; i--)
+        {
+            CardEffectControl.instance.CardIdCheck(effectChain[i], true);
+            CardEffectControl.instance.CardTypeCheck(effectChain[i], true);
+        }
+        effectChain.Clear();
+        CardEffectControl.instance.needSelected = 0;
+        selectForEffect = false;
+        EffectPhase();
+    }
+
+    public async Task EndTurnStatusCheck()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (monsterZone[i].transform.childCount == 1)
+            {
+                if (monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isBurn > 0)
+                {
+                    monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health -= 1;
+                    monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().healthText.text = monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health.ToString();
+                    monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isBurn -= 1;
+                    await Task.Delay(500);
+                }
+                if (monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isInvicible > 0)
+                {
+                    monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isInvicible -= 1;
+                }
+            }
+            if (enemyMonsterZone[i].transform.childCount == 1)
+            {
+                if (enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isBurn > 0)
+                {
+                    enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health -= 1;
+                    enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().healthText.text = monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health.ToString();
+                    enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isBurn -= 1;
+                    await Task.Delay(500);
+                }
+                if (enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isInvicible > 0)
+                {
+                    enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().isInvicible -= 1;
+                }
+            }
+        }
+    }
+} 

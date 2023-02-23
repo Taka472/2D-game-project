@@ -1,0 +1,148 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+public class ScriptableCard : MonoBehaviour
+{
+    public Card cards;
+    public Sprite dragon;
+    public Sprite golem;
+    public Sprite demon;
+    public Sprite angel;
+    public Sprite witch;
+    public Sprite spell;
+    public Sprite shield'
+    public Image healthSprite;
+    public Image attackSprite;
+    public Image back;
+
+    public int id;
+    public string cardName;
+    public string description;
+    public Type type;
+    public int cost;
+    public int attack;
+    public int health;
+
+    public Image DisplayImage;
+    public Image typeImage;
+    public Text nameText;
+    public Text descriptionText;
+    public Text costText;
+    public Text attackText;
+    public Text healthText;
+
+    public bool cardBack;
+    public static bool staticCardBack;
+    public static ScriptableCard instance;
+
+    public GameObject Hand;
+    public static Type staticType;
+
+    public bool canBeSummon;
+    public static bool summoned;
+
+    public GameObject temp;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        canBeSummon = false;
+        summoned = false;
+        instance = this;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DrawCard();
+        CardDisplay();
+        OnSummon();
+    }
+    void CardDisplay()
+    {
+        TypeCheck();
+        DisplayImage.sprite = cards.Image;
+        id = cards.id;
+        cardName = cards.cardName;
+        description = cards.description;
+        type = cards.type;
+        cost = cards.cost;
+        attack = cards.attack;
+        health = cards.health;
+        nameText.text = "" + cardName;
+        descriptionText.text = "" + description;
+        if (type != Type.spell)
+        {
+            costText.text = "" + cost;
+            attackText.text = "" + attack;
+            healthText.text = "" + health;
+        }
+        staticCardBack = cardBack;
+        staticType = type;
+    }
+
+    void TypeCheck()
+    {
+        switch (type)
+        {
+            case Type.spell:
+                {
+                    back.color = new(35 / 255f, 145 / 255f, 35 / 255f);
+                    typeImage.sprite = spell;
+                    break;
+                }
+            case Type.dragon:
+                {
+                    typeImage.sprite = dragon;
+                    break;
+                }
+            case Type.golem:
+                {
+                    healthSprite.sprite = shieldSprite.sprite;
+                    typeImage.sprite = golem;
+                    break;
+                }
+            case Type.demon:
+                {
+                    typeImage.sprite = demon;
+                    break;
+                }
+            case Type.angel:
+                {
+                    typeImage.sprite = angel;
+                    break;
+                }
+            case Type.witch:
+                {
+                    typeImage.sprite = witch;
+                    break;
+                }
+        }
+    }
+
+    void DrawCard()
+    {
+        Hand = GameObject.Find("Hand");
+        if (transform.parent == Hand.transform.parent)
+        {
+            cardBack = false;
+        }
+        if (CompareTag("Card"))
+        {
+            cards = PlayerDeck.instance.deck[PlayerDeck.instance.numsOfCard - 1];
+            PlayerDeck.instance.numsOfCard--;
+            tag = "Untagged";
+            cardBack = false;
+        }
+    }
+
+    void OnSummon()
+    {
+        if (summoned && type != Type.spell)
+            GetComponent<DragDrop>().enabled = false;
+        else GetComponent<DragDrop>().enabled = true;
+    }
+}

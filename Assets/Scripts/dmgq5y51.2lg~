@@ -1,0 +1,98 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerDeck : MonoBehaviour
+{
+    public List<Card> deck = new();
+    private Card container;
+
+    public Image[] cardInDeck;
+
+    public GameObject Hand;
+    public GameObject monsterCard;
+    public GameObject spellCard;
+
+    public static PlayerDeck instance;
+
+    public int numsOfCard;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        instance = this;
+        for (int i = 0; i < 30; i++)
+        {
+            deck.Add(CardDatabase.Data[Random.Range(0, 8)]);
+        }
+        numsOfCard = deck.Count;
+        Shuffle();
+        StartCoroutine(StartGame());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DeckDisplay();
+    }
+
+    public void Shuffle()
+    {
+        for (int i = 0; i < deck.Count; i++)
+        {
+            container = deck[i];
+            int RandomIndex = Random.Range(1, deck.Count);
+            deck[i] = deck[RandomIndex];
+            deck[RandomIndex] = container;
+        }
+        DeckShuffle();
+    }
+
+    void DeckDisplay()
+    {
+        if (numsOfCard == 30) return;
+        if (numsOfCard % 2 == 0) cardInDeck[numsOfCard / 2].gameObject.SetActive(false);
+    }
+
+    void DeckShuffle()
+    {
+        foreach (Image cardBack in cardInDeck)
+        {
+            cardBack.GetComponent<Image>().color = Color.green;
+        }
+        Invoke(nameof(DeckReset), 0.5f);
+    }
+
+    void DeckReset()
+    {
+        foreach (Image cardBack in cardInDeck)
+        {
+            cardBack.GetComponent<Image>().color = Color.white;
+        }
+    }
+
+    IEnumerator StartGame()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+            if (deck[numsOfCard - 1].type != Type.spell) 
+                Instantiate(monsterCard, transform.position, transform.rotation);
+            else Instantiate(spellCard, transform.position, transform.rotation);
+            GameControl.instance.cardInHand++;
+        }
+        if (ScriptableCard.isYourTurn) GameControl.instance.MainPhase = true;
+    }
+
+    public IEnumerator DrawCard()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (deck[numsOfCard - 1].type != Type.spell)
+            Instantiate(monsterCard, transform.position, transform.rotation);
+        else Instantiate(spellCard, transform.position, transform.rotation);
+        if (ScriptableCard.isYourTurn)
+            GameControl.instance.cardInHand++;
+        Debug.Log(ScriptableCard.summoned);
+    }
+}

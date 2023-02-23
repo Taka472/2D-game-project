@@ -1,0 +1,48 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class TributeNotice : MonoBehaviour
+{
+    public Text tributeNoticeText;
+
+    public static TributeNotice instance;
+
+    public bool TributePermit;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        instance = this;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+
+    public void RequestTribute(int amount)
+    {
+        Image temp = Instantiate(tributeSummonNotice);
+        temp.transform.SetParent(GameObject.Find("Canvas").transform);
+        temp.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        string haveS;
+        if (amount == 1) haveS = ""; else haveS = "s";
+        tributeNoticeText.text = "This monster requires tributing " + amount + " monster" + haveS + " to summon";
+    }
+
+    public void Confirm()
+    {
+        TributePermit = true;
+        Destroy(gameObject);
+    }
+
+    public void Cancel()
+    {
+        TributePermit = false;
+        Destroy(gameObject);
+    }
+}

@@ -1,0 +1,226 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+public class ScriptableCard : MonoBehaviour, IPointerClickHandler
+{
+    public Card cards;
+    public Sprite dragon;
+    public Sprite golem;
+    public Sprite demon;
+    public Sprite angel;
+    public Sprite witch;
+    public Sprite spell;
+    public Image healthSprite;
+    public Image attackSprite;
+    public Image back;
+    public Image glowEffect;
+
+    public int id;
+    public string cardName;
+    public string description;
+    public Type type;
+    public int cost;
+    public int attack;
+    public int health;
+
+    public Image DisplayImage;
+    public Image typeImage;
+    public Text nameText;
+    public Text descriptionText;
+    public Text costText;
+    public Text attackText;
+    public Text healthText;
+
+    public static ScriptableCard instance;
+
+    public GameObject Hand;
+
+    public bool canBeSummon;
+    public static bool summoned;
+    public static bool isYourTurn;
+
+    public GameObject cardBack;
+    public Image InfoNotice;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        canBeSummon = false;
+        summoned = false;
+        instance = this;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DrawCard();
+        CardDisplay();
+        CheckSummon();
+        OnSummon();
+        GlowControl();
+        Attack();
+    }
+    void CardDisplay()
+    {
+        TypeCheck();
+        DisplayImage.sprite = cards.Image;
+        id = cards.id;
+        cardName = cards.cardName;
+        description = cards.description;
+        type = cards.type;
+        cost = cards.cost;
+        attack = cards.attack;
+        health = cards.health;
+        nameText.text = "" + cardName;
+        descriptionText.text = "" + description;
+        if (type != Type.spell)
+        {
+            costText.text = "" + cost;
+            attackText.text = "" + attack;
+            healthText.text = "" + health;
+        }
+    }
+
+    void TypeCheck()
+    {
+        switch (type)
+        {
+            case Type.spell:
+                {
+                    typeImage.sprite = spell;
+                    break;
+                }
+            case Type.dragon:
+                {
+                    typeImage.sprite = dragon;
+                    break;
+                }
+            case Type.golem:
+                {
+                    typeImage.sprite = golem;
+                    break;
+                }
+            case Type.demon:
+                {
+                    typeImage.sprite = demon;
+                    break;
+                }
+            case Type.angel:
+                {
+                    typeImage.sprite = angel;
+                    break;
+                }
+            case Type.witch:
+                {
+                    typeImage.sprite = witch;
+                    break;
+                }
+        }
+    }
+
+    void DrawCard()
+    {
+        if (transform.name[..5] != "Enemy")
+            Hand = GameObject.Find("Hand");
+        else Hand = GameObject.Find("EnemyHand");
+        if (transform.parent == Hand.transform.parent)
+        {
+            cardBack.SetActive(false);
+        }
+        if (transform.name[..5] == "Enemy")
+        {
+            cardBack.SetActive(true);
+            if (healthSprite != null && attackSprite != null)
+            {
+                healthSprite.gameObject.SetActive(false);
+                attackSprite.gameObject.SetActive(false);
+            }
+        }
+        if (CompareTag("Card"))
+        {
+            if (Hand.name == "Hand")
+            {
+                cards = PlayerDeck.instance.deck[PlayerDeck.instance.numsOfCard - 1];
+                PlayerDeck.instance.numsOfCard--;
+            } else
+            {
+                cards = EnemyDeck.instance.deck[EnemyDeck.instance.numsOfCard - 1];
+                EnemyDeck.instance.numsOfCard--;
+            }
+            tag = "Untagged";
+        }
+    }
+
+    void OnSummon()
+    {
+        if (transform.name[..5] != "Enemy")
+        {
+            Debug.Log(isYourTurn);
+            if (isYourTurn)
+            {
+                if (canBeSummon)
+                {
+                    GetComponent<DragDrop>().enabled = true;
+                    if (summoned && type != Type.spell)
+                        GetComponent<DragDrop>().enabled = false;
+                }
+                else GetComponent<DragDrop>().enabled = false;
+                if (type == Type.spell && transform.parent.name[..4] == "Spel")
+                    GetComponent<DragDrop>().enabled = false;
+            }
+            else GetComponent<DragDrop>().enabled = false;
+        }
+    }
+
+    void CheckSummon()
+    {
+        if (cost <= 4) canBeSummon = true;
+        else if (cost <= 6 && GameControl.instance.monsterOnField >= 1) canBeSummon = true;
+        else if (GameControl.instance.monsterOnField > 1) canBeSummon = true;
+        else canBeSummon = false;
+    }
+
+    void GlowControl()
+    {
+        if (!isYourTurn && glowEffect != null)
+            glowEffect.gameObject.SetActive(false);
+        if (canBeSummon && transform.parent.name == "Hand" && isYourTurn && !summoned)
+            glowEffect.gameObject.SetActive(true);
+        else if (!canBeSummon && glowEffect != null)
+            glowEffect.gameObject.SetActive(false);
+        if (summoned && glowEffect != null && type != Type.spell)
+            glowEffect.gameObject.SetActive(false);
+        if (type == Type.spell && transform.parent.name[..4] == "Spel")
+            glowEffect.gameObject.SetActive(false);
+    }
+
+    public void UpdateHealth (int amount)
+    {
+        health -= amount;
+        healthText.text = "" + health;
+    }
+
+    void Attack()
+    {
+        if (GameControl.instance.Attack)
+        {
+            if (GetComponent<DragDrop>().enabled)
+                GetComponent<DragDrop>().enabled = false;
+            canBeSummon = false;
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Image temp = Instantiate(InfoNotice);
+        temp.transform.SetParent(GameObject.Find("Canvas").transform);
+        temp.GetComponent<RectTransform>().localScale = Vector3.one;
+        temp.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        InfoPanelControl.instance.typeTextData = type.ToString();
+        InfoPanelControl.instance.typeData = typeImage;
+        InfoPanelControl.instance.descriptionData = description;
+    }
+}

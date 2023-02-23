@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 7547c944233a5a4458b8b39cd66ea91c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 339
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90fd20c391c3af4e995cc42425a3bb7
+      internalID: -217205869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 339
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cf327ac08184c419ed3b4b948618aa
+      internalID: -1807241866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_2
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 339
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2194ad2bba8c74992c3eef207f8fe5
+      internalID: 1179101983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_3
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 339
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcfd0f581f8e3d43ae10c6494551c66
+      internalID: -1197761541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_4
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 339
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94218654591d7de439f24f1f73f5a3c2
+      internalID: -643155552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 170
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0afb5eccfb62f4098807668009642d
+      internalID: -1266313368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_6
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 170
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ab01c59c1393f4c985a4ace28bd51b
+      internalID: 400313134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_7
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 170
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b79343a2f030546bc635c0b41fedcd
+      internalID: 20734836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_8
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 170
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029c99924a8aa9f4bb794f51c054574e
+      internalID: -299529777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_9
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 170
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4103d8147c8404d9553f495ae2111a
+      internalID: 42361027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93a6a3655882b34f9073170f6f407a6
+      internalID: 695455079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_11
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fda7c80e385fb841870eca3d3f12bd7
+      internalID: 2000700153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_12
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1342356cc15b8164d9a06f3c4629f679
+      internalID: -990673964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_13
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1
+        width: 172
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a266752fbbaae4f97203bca7882585
+      internalID: -951553845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_4: -643155552
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_12: -990673964
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_11: 2000700153
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_2: 1179101983
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_3: -1197761541
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_10: 695455079
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_5: -1266313368
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_6: 400313134
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_8: -299529777
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_7: 20734836
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_0: -217205869
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_1: -1807241866
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_13: -951553845
+      sword-slash-effect-arrow-symbol-fire-flame-transparent-png-1019253_9: 42361027
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

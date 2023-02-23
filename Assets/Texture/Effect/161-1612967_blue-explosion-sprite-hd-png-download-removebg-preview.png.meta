@@ -1,0 +1,684 @@
+fileFormatVersion: 2
+guid: 2f3f8d602b4cca940b1bbb9a38e5fc9b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 401
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411d28cca04ace841b6774bcf9b1e5e6
+      internalID: 1609699908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 401
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8259a24e00842f341af55a14eafbfddd
+      internalID: 130363419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 401
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a74643ae52d024eb271eb45dfbb620
+      internalID: 1116576785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 401
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c463770f9d7c0944971fda28f5d4dac
+      internalID: 998223122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 401
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b138c9aa374e5e489170e1fe8504ea1
+      internalID: 1365466561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 307
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260c48ef11cc55e45a6086fceefee476
+      internalID: 675925420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 307
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d144777365f3b3d42a269e236157e1dc
+      internalID: 314547803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 307
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcb7f5b7dd6a39408c4fcdfc7d5fa13
+      internalID: 365690415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 307
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2909fb82f55892d4db1ac5942be25ba5
+      internalID: -855946322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 307
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebcd443902ddf540baf26029b29c609
+      internalID: 1416171885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 213
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa9b222b259a3740b15eb0236a8b778
+      internalID: 1393561630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 213
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6a0683e8473434b9c2d8767f26ee28
+      internalID: 828551649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 213
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad2efb841b57c84a8b59780c60548a0
+      internalID: 1346714164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 213
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8028ba9031704a24392cf821b7eb39fd
+      internalID: -368515257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 213
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07a5958d704d50478f0bb8f554ac628
+      internalID: 906810621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 119
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb39233118753345b9eb0a5cf1c85f7
+      internalID: 1343486368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 119
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c26726e0a28f7144a2e5411c39f81c1
+      internalID: 330319522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 119
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72dc5cc31cc6bab4f86151d5244a5332
+      internalID: -1580872933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 119
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8cc5383377bbb47a2683717f65faa5
+      internalID: 319879621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 119
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d99e64db562b743b97b8b5e6f582dc
+      internalID: 1251494939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 25
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e476fcce9e708194eac84fe8b841c63a
+      internalID: -1444640366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 25
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdb50fa47084c54bbaa59952edf1aec
+      internalID: 952888084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 25
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2a271b47d368b43850508e49411c38
+      internalID: 1968358480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 25
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e8cb41941b7b04d949f64a1ea43df5
+      internalID: -1987048223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 25
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d1d171c9c33034c8ee5ad4b653ddc7
+      internalID: -1364290946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_16: 330319522
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_11: 828551649
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_6: 314547803
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_5: 675925420
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_18: 319879621
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_9: 1416171885
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_4: 1365466561
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_19: 1251494939
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_10: 1393561630
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_24: -1364290946
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_22: 1968358480
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_15: 1343486368
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_1: 130363419
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_0: 1609699908
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_7: 365690415
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_21: 952888084
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_2: 1116576785
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_8: -855946322
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_23: -1987048223
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_12: 1346714164
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_14: 906810621
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_20: -1444640366
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_17: -1580872933
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_3: 998223122
+      161-1612967_blue-explosion-sprite-hd-png-download-removebg-preview_13: -368515257
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

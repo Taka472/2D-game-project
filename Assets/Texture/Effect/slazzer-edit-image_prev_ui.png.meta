@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 8120e593b644e694c905ec37f80ecf54
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 310
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.51103395, y: 0.2704954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ed57e4bc87ef24bbb82854ad920d48
+      internalID: 1638893488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 310
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.48344943, y: 0.2704954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27097b3b59e923c4b8fd0332f25212ec
+      internalID: -1479607849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 310
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.46138152, y: 0.2793225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4025c3a74869f584483d69e33e1e6fd2
+      internalID: -1561715449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 310
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.44483083, y: 0.25725484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e45d4947772e02499083da4b9a297a3
+      internalID: -1281423113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 160
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5165509, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705abbe507665324785e36b57faf1016
+      internalID: 1732056447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 160
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.49448332, y: 0.49117288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84da0923daa74dd43ab153f4dce6a3ba
+      internalID: -1618270409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 160
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.47793224, y: 0.49558645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6baefdcdad646f74c99c3f976d1dcd71
+      internalID: 1095143358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_7
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 160
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.46138152, y: 0.48675945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1819f9f5f78a17d4ab6d76e6b2298d32
+      internalID: 335110811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 10
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5275848, y: 0.7250911}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2d22a6d3f4faf4794d5be5d1c05b31
+      internalID: -696567548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 10
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.49448332, y: 0.73833174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b007e0cd2d4a3d14ea46850de5de469b
+      internalID: 710014965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_10
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 10
+        width: 120
+        height: 150
+      alignment: 9
+      pivot: {x: 0.45034763, y: 0.7339182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e710cbeff28cda46acf1c2b9fdcd76e
+      internalID: -466577185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slazzer-edit-image_prev_ui_11
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 10
+        width: 120
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9e06a12a72df64e8b468fa25f95b97
+      internalID: -500953581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      slazzer-edit-image_prev_ui_7: 335110811
+      slazzer-edit-image_prev_ui_1: -1479607849
+      slazzer-edit-image_prev_ui_3: -1281423113
+      slazzer-edit-image_prev_ui_11: -500953581
+      slazzer-edit-image_prev_ui_8: -696567548
+      slazzer-edit-image_prev_ui_6: 1095143358
+      slazzer-edit-image_prev_ui_4: 1732056447
+      slazzer-edit-image_prev_ui_5: -1618270409
+      slazzer-edit-image_prev_ui_10: -466577185
+      slazzer-edit-image_prev_ui_9: 710014965
+      slazzer-edit-image_prev_ui_0: 1638893488
+      slazzer-edit-image_prev_ui_2: -1561715449
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

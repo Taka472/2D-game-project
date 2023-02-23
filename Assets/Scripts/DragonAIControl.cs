@@ -1,0 +1,384 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DragonAIControl : MonoBehaviour
+{
+    public static DragonAIControl instance;
+
+    public bool haveSummon;
+    public List<GameObject> cardInHand;
+    public Image hand;
+
+    public GameObject selectedSlot;
+
+    public bool isSet;
+
+    public int countBelow4;
+    public int countBelow6;
+    public int countAbove;
+    public int countOnField4;
+    public int countOnField6;
+    public int countSpell;
+
+    public GameObject target;
+    public int enemyAttack;
+
+    public float timer = 2;
+    // Start is called before the first frame update
+    void Start()
+    {
+        instance = this;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public async void PlayYourTurn()
+    {
+        haveSummon = false;
+        CountCard();
+        if (GameControl.instance.enemyMonsterOnField == 5 && GameControl.instance.enemySpellOnField == 5)
+            await WinAttack();
+        await UseSetSpell();
+        if (countAbove > 0 && countOnField4 + countOnField6 > 1)
+        {
+            for (int i = 0; i < cardInHand.Count; i++)
+            {
+                if (cardInHand[i].GetComponent<ScriptableCard>().cost > 6)
+                {
+                    SelectingForTribute(2);
+                    await Task.Delay(500);
+                    SelectingSlot();
+                    await OnSummon(i);
+                    haveSummon = true;
+                    GameControl.instance.enemyMonsterOnField++;
+                    GameControl.instance.cardInEnemyHand--;
+                    cardInHand.RemoveAt(i);
+                }
+            }
+        }
+        else if (countBelow6 > 0 && countOnField4 > 0)
+        {
+            for (int i = 0; i < cardInHand.Count; i++)
+            {
+                if (cardInHand[i].GetComponent<ScriptableCard>().cost > 4 && cardInHand[i].GetComponent<ScriptableCard>().cost < 7)
+                {
+                    SelectingForTribute(1);
+                    await Task.Delay(500);
+                    SelectingSlot();
+                    await OnSummon(i);
+                    haveSummon = true;
+                    GameControl.instance.enemyMonsterOnField++;
+                    GameControl.instance.cardInEnemyHand--;
+                    cardInHand.RemoveAt(i);
+                }
+            }
+        }
+        else for (int i = 0; i < cardInHand.Count; i++)
+            {
+                if (cardInHand[i].GetComponent<ScriptableCard>().cost <= 4)
+                {
+                    SelectingSlot();
+                    await OnSummon(i);
+                    haveSummon = true;
+                    GameControl.instance.enemyMonsterOnField++;
+                    GameControl.instance.cardInEnemyHand--;
+                    cardInHand.RemoveAt(i);
+                }
+            }
+        for (int i = 0; i < cardInHand.Count; i++)
+        {
+            SelectingSpellSlot();
+            if (Random.Range(0, 2) == 1 || GameControl.instance.enemyMonsterOnField == 0) isSet = true;
+            else isSet = false;
+            await UseSpell(i);
+            GameControl.instance.enemySpellOnField++;
+            GameControl.instance.cardInEnemyHand--;
+            cardInHand.RemoveAt(i);
+        }
+        if (!GameControl.instance.isFirst && GameControl.instance.enemyMonsterOnField > 0) await WinAttack();
+        EndYourTurn();
+    }
+
+    void CountCard()
+    {
+        for (int i = 0; i < GameControl.instance.cardInEnemyHand; i++)
+        {
+            if (cardInHand[i].GetComponent<ScriptableCard>().type == Type.spell) countSpell++;
+            else if (cardInHand[i].GetComponent<ScriptableCard>().cost <= 4) countBelow4++;
+            else if (cardInHand[i].GetComponent<ScriptableCard>().cost <= 6) countBelow6++;
+            else countAbove++;
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1)
+            {
+                if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().cost <= 4)
+                    countOnField4++;
+                else if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().cost <= 6)
+                    countOnField6++;
+            }
+        }
+    }
+
+    void SelectingSlot()
+    {
+        if (GameControl.instance.enemyMonsterZone[2].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemyMonsterZone[2];
+        else if (GameControl.instance.enemyMonsterZone[3].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemyMonsterZone[3];
+        else if (GameControl.instance.enemyMonsterZone[1].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemyMonsterZone[1];
+        else if (GameControl.instance.enemyMonsterZone[4].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemyMonsterZone[4];
+        else if (GameControl.instance.enemyMonsterZone[0].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemyMonsterZone[0];
+    }
+
+    void SelectingSpellSlot()
+    {
+        if (GameControl.instance.enemySpellZone[2].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemySpellZone[2];
+        else if (GameControl.instance.enemySpellZone[3].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemySpellZone[3];
+        else if (GameControl.instance.enemySpellZone[1].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemySpellZone[1];
+        else if (GameControl.instance.enemySpellZone[4].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemySpellZone[4];
+        else if (GameControl.instance.enemySpellZone[0].transform.childCount == 0)
+            selectedSlot = GameControl.instance.enemySpellZone[0];
+    }
+
+    async Task OnSummon(int i)
+    {
+        cardInHand[i].transform.SetParent(selectedSlot.transform);
+        selectedSlot.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector3(37, -36, 0);
+        selectedSlot.transform.GetChild(0).GetComponent<RectTransform>().localScale = new Vector3(.35f, .35f, .35f);
+        selectedSlot.transform.GetChild(0).GetComponent<ScriptableCard>().cardBack.SetActive(false);
+        selectedSlot.transform.GetChild(0).GetComponent<ScriptableCard>().healthSprite.gameObject.SetActive(true);
+        selectedSlot.transform.GetChild(0).GetComponent<ScriptableCard>().attackSprite.gameObject.SetActive(true);
+        selectedSlot.transform.GetChild(0).eulerAngles = new Vector3(0, 0, 180);
+        await Task.Delay(500);
+    }
+
+    async Task UseSpell(int i)
+    {
+        cardInHand[i].transform.SetParent(selectedSlot.transform);
+        selectedSlot.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector3(37, -36, 0);
+        selectedSlot.transform.GetChild(0).GetComponent<RectTransform>().localScale = new Vector3(.35f, .35f, .35f);
+        if (!isSet)
+            selectedSlot.transform.GetChild(0).GetComponent<ScriptableCard>().cardBack.SetActive(false);
+        selectedSlot.transform.GetChild(0).eulerAngles = new Vector3(0, 0, 180);
+        await Task.Delay(500);
+    }
+
+    async Task UseSetSpell()
+    {
+        if (GameControl.instance.enemySpellOnField == 0 || GameControl.instance.enemyMonsterOnField == 0) return;
+        for (int i = 0; i < 5; i++)
+        {
+            if (GameControl.instance.enemySpellZone[i].transform.childCount == 1)
+            {
+                if (GameControl.instance.enemySpellZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().cardBack.activeSelf)
+                {
+                    if (Random.Range(0, 2) == 1)
+                        GameControl.instance.enemySpellZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().cardBack.SetActive(false);
+                    await Task.Delay(500);
+                }
+            }
+        }
+    }
+
+    void SelectingForTribute(int amount)
+    {
+        if (amount > 1)
+        {
+            for (int run = amount; run > 0; run--)
+            {
+                GameObject minHealth = null;
+                for (int i = 0; i < 5; i++)
+                {
+                    if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1 &&
+                        GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().cost <= 6)
+                    {
+                        if (minHealth == null)
+                        {
+                            minHealth = GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).gameObject;
+                        }
+                        else
+                        {
+                            if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health < minHealth.GetComponent<ScriptableCard>().health &&
+                                GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().cost <= 6)
+                                minHealth = GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).gameObject;
+                        }
+                    }
+                }
+                GameControl.instance.SendToGraveYard(minHealth);
+            }
+        }
+        else
+        {
+            GameObject minHealth = null;
+            for (int i = 0; i < 5; i++)
+            {
+                if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1)
+                {
+                    if (minHealth == null)
+                    {
+                        minHealth = GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).gameObject;
+                    }
+                    else
+                    {
+                        if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health < minHealth.GetComponent<ScriptableCard>().health)
+                            minHealth = GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).gameObject;
+                    }
+                }
+            }
+            GameControl.instance.SendToGraveYard(minHealth);
+        }
+    }
+
+    async Task WinAttack()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1)
+            {
+                GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = false;
+            }
+        }
+        if (GameControl.instance.canBeDirectAttack)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1)
+                {
+                    if (!GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack)
+                    {
+                        GameControl.instance.playerHealth -= GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack;
+                        StartCoroutine(GameControl.instance.CameraShake(.5f, 7));
+                        GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = true;
+                        await Task.Delay(500);
+                    }
+                }
+            }
+        }
+        else
+        {
+            GameControl.instance.Attack = true;
+            enemyAttack = GameControl.instance.enemyMonsterOnField;
+            if (enemyAttack != 0)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1)
+                    {
+                        SelectingTarget();
+                        if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack >= target.GetComponent<ScriptableCard>().health &&
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health > target.GetComponent<ScriptableCard>().attack &&
+                            !GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack)
+                        {
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health -= target.GetComponent<ScriptableCard>().attack;
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().healthText.text = GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health.ToString();
+                            target.GetComponent<ScriptableCard>().health -= GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack;
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = true;
+                            enemyAttack--;
+                            await Task.Delay(500);
+                        }
+                    }
+                }
+            }
+            if (enemyAttack > 0) await EqualAttack();
+        }
+    }
+
+    async Task EqualAttack()
+    {
+        if (GameControl.instance.canBeDirectAttack)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1)
+                {
+                    if (!GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack)
+                    {
+                        GameControl.instance.playerHealth -= GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack;
+                        GameControl.instance.CameraShake(.5f, 7);
+                        GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = true;
+                        await Task.Delay(500);
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (GameControl.instance.enemyMonsterZone[i].transform.childCount == 1)
+                {
+                    if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack)
+                        continue;
+                    else
+                    {
+                        SelectingTarget();
+                        if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack == target.GetComponent<ScriptableCard>().health &&
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health == target.GetComponent<ScriptableCard>().attack &&
+                            !GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack)
+                        {
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health -= target.GetComponent<ScriptableCard>().attack;
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().healthText.text = GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health.ToString();
+                            target.GetComponent<ScriptableCard>().health -= GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack;
+                            target.GetComponent<ScriptableCard>().healthText.text = target.GetComponent<ScriptableCard>().health.ToString();
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = true;
+                            enemyAttack--;
+                            await Task.Delay(500);
+                        }
+                        else if (GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack < target.GetComponent<ScriptableCard>().health &&
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health > target.GetComponent<ScriptableCard>().attack &&
+                            !GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack)
+                        {
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health -= target.GetComponent<ScriptableCard>().attack;
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().healthText.text = GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health.ToString();
+                            target.GetComponent<ScriptableCard>().health -= GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().attack;
+                            target.GetComponent<ScriptableCard>().healthText.text = target.GetComponent<ScriptableCard>().health.ToString();
+                            GameControl.instance.enemyMonsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().haveAttack = true;
+                            enemyAttack--;
+                            await Task.Delay(500);
+                        }
+                    }
+                }
+            }
+            //else
+            //{
+            //    GameControl.instance.Attack = false;
+            //    EndYourTurn();
+            //}
+        }
+    }
+    void SelectingTarget()
+    {
+        float minHealth = 100;
+        for (int i = 0; i < 5; i++)
+        {
+            if (GameControl.instance.monsterZone[i].transform.childCount == 1)
+            {
+                if (GameControl.instance.monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health < minHealth)
+                {
+                    target = GameControl.instance.monsterZone[i].transform.GetChild(0).gameObject;
+                    minHealth = GameControl.instance.monsterZone[i].transform.GetChild(0).GetComponent<ScriptableCard>().health;
+                }
+            }
+        }
+    }
+
+    void EndYourTurn()
+    {
+        TurnSystem.instance.EndYourOpponentTurn();
+    }
+}
